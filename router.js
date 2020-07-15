@@ -3,6 +3,7 @@ const passportService = require('./services/passport')
 const passport = require('passport')
 
 const requireAuth = passport.authenticate('jwt', { session: false })
+console.log('requireAuth', requireAuth)
 
 module.exports = function (app) {
   app.get('/', requireAuth, function (req, res) {
